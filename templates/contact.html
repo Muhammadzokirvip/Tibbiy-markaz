@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="CareMed demo project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/contact.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header trans_200">
+		
+		<!-- Top Bar -->
+		<div class="top_bar">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+							<div class="top_bar_item"><a href="#"></a></div>
+							<div class="top_bar_item"><a href="#"></a></div>
+							<div class="emergencies  d-flex flex-row align-items-center justify-content-start ml-auto">Favqulodda vaziyatlar: +998991234567</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header Content -->
+		<div class="header_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<nav class="main_nav ml-auto">
+								<ul>
+									<li><a href="{% url 'index' %}">Asosiy sahifa</a></li>
+									<li><a href="{% url 'about' %}">Blog</a></li>
+									<li><a href="{% url 'services' %}">Xizmatlar</a></li>
+									<li><a href="{% url 'contact' %}">Xabar qoldirish</a></li>
+								</ul>
+							</nav>
+							<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Logo -->
+		<div class="logo_container_outer">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="logo_container">
+							<a href="#">
+								<div class="logo_content d-flex flex-column align-items-start justify-content-center">
+									<div class="logo_line"></div>
+									<div class="logo d-flex flex-row align-items-center justify-content-center">
+										<div class="logo_text">Care<span>Med</span></div>
+										<div class="logo_box">+</div>
+									</div>
+									<div class="logo_sub">Sog'liq markazi</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu_container menu_mm">
+
+		<!-- Menu Close Button -->
+		<div class="menu_close_container">
+			<div class="menu_close"></div>
+		</div>
+
+		<!-- Menu Items -->
+		<div class="menu_inner menu_mm">
+			<div class="menu menu_mm">
+				<ul class="menu_list menu_mm">
+					<li class="menu_item menu_mm"><a href="{% url 'index' %}">Asosiy sahifa</a></li>
+					<li class="menu_item menu_mm"><a href="{% url 'about' %}">Blog</a></li>
+					<li class="menu_item menu_mm"><a href="{% url 'services' %}">Xizmatlar</a></li>
+					<li class="menu_item menu_mm"><a href="{% url 'contact' %}">Xabar qoldirish</a></li>
+				</ul>
+			</div>
+			<div class="menu_extra">
+				<div class="menu_appointment"><a href="#">Uchrashuvni so'rash</a></div>
+				<div class="menu_emergencies">Favqulodda vaziyatlar uchun: +998 99 123 45</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/contact.jpg' %}" data-speed="0.8"></div>
+		<div class="home_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="home_content">
+							<div class="home_title"><span>CareMed</span> Xabar qoldirish</div>
+							<div class="breadcrumbs">
+								<ul>
+									<li><a href="#">Asosiy sahifa</a></li>
+									<li>Xabar qoldirish</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Contact -->
+
+	<div class="contact">
+		<div class="container">
+			<div class="row">
+
+				<!-- Contact Info -->
+				<div class="col-lg-6">
+					<div class="section_title"><h2>Aloqa va manzillar</h2></div>
+					<div class="contact_text">
+						<p>Aloqa uchun ushbu ko'rsatilgan telefon raqamga qo'g'iroq qiling yoki markazimizg keling</p>
+					</div>
+					<ul class="contact_about_list">
+						<li><div class="contact_about_icon"><img src="{% static 'images/phone-call.svg' %}" alt=""></div><span>+998991234567</span></li>
+						<li><div class="contact_about_icon"><img src="{% static 'images/envelope.svg' %}" alt=""></div><span>caremed@gmail.com</span></li>
+						<li><div class="contact_about_icon"><img src="{% static 'images/placeholder.svg' %}" alt=""></div><span>Toshken shahar Mirzo Ulug'bek shaxaechasi</span></li>
+					</ul>
+				</div>
+
+				<!-- Contact Form -->
+				<div class="col-lg-6 form_col">
+					<div class="contact_form_container">
+						<form action="#" id="contact_form" class="contact_form">
+							{% csrf_token %}
+							<div class="row">
+								<div class="col-md-6 input_col">
+									<div class="input_container input_name"><input name="name" type="text" id="name" class="contact_input" placeholder="Ism" required="required"></div>
+								</div>
+								<div class="col-md-6 input_col">
+									<div class="input_container"><input name="email" type="email" id="email" class="contact_input" placeholder="E-mail" required="required"></div>
+								</div>
+							</div>
+							<div class="input_container"><input name="phone" type="text" id="phone" class="contact_input" placeholder="Telefon raqam" required="required"></div>
+							<div class="input_container"><textarea name="message" class="contact_input contact_text_area" id="message" placeholder="Habar" required="required"></textarea></div>
+							<button class="button contact_button"><a href="#">Yuborish</a></button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="row map_row">
+				<div class="col">
+
+					<!-- Contact Map -->
+
+					<div class="contact_map">
+
+						<!-- Google Map -->
+						
+						<div class="map">
+							<div id="google_map" class="google_map">
+								<div class="map_container">
+									<div id="map"></div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Working Hours -->
+						<div class="box working_hours">
+							<div class="box_icon d-flex flex-column align-items-start justify-content-center"><div style="width:29px; height:29px;"><img src="{% static 'images/alarm-clock.svg' %}" alt=""></div></div>
+							<div class="box_title">Ish kunlari</div>
+							<div class="working_hours_list">
+								<ul>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Dushanba – Juma</div>
+										<div class="ml-auto">8.00 – 19.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Shanba</div>
+										<div class="ml-auto">9.30 – 17.00</div>
+									</li>
+									<li class="d-flex flex-row align-items-center justify-content-start">
+										<div>Yakshanba</div>
+										<div class="ml-auto">9.30 – 15.00</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="footer_container">
+			<div class="container">
+				<div class="row">
+					
+					<!-- Footer - About -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_about">
+							<div class="footer_logo_container">
+								<a href="#" class="d-flex flex-column align-items-center justify-content-center">
+									<div class="logo_content">
+										<div class="logo d-flex flex-row align-items-center justify-content-center">
+											<div class="logo_text">Care<span>Med</span></div>
+											<div class="logo_box">+</div>
+										</div>
+										<div class="logo_sub">Sog'liq markazi</div>
+									</div>
+								</a>
+							</div>
+							<div class="footer_about_text">
+								<p>Ushbu havolalar orqali kerakli malumotlar oling</p>
+							</div>
+							<ul class="footer_about_list">
+								<li><div class="footer_about_icon"><img src="{% static 'images/phone-call.svg' %}" alt=""></div><span>+998991234567</span></li>
+								<li><div class="footer_about_icon"><img src="{% static 'images/envelope.svg' %}" alt=""></div><span>caremed@gmail.com</span></li>
+								<li><div class="footer_about_icon"><img src="{% static 'images/placeholder.svg' %}" alt=""></div><span>Toshken shahar Mirzo Ulug'bek shaxaechasi</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Footer - Links -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_links footer_column">
+							<div class="footer_title">Foydali havolalar</div>
+							<ul>
+								<li><a href="#">Guvohlar</a></li>
+								<li><a href="#">TSS</a></li>
+								<li><a href="#">Ishga ariza berish</a></li>
+								<li><a href="#">Foydalanish shartlari</a></li>
+								<li><a href="#">Bizning hamkorlarimiz</a></li>
+								<li><a href="#">Xizmatlar</a></li>
+								<li><a href="#">Bepul xizmatlar</a></li>
+								<li><a href="#">Biz haqimizda</a></li>
+								<li><a href="#">Aloqa</a></li>
+								<li><a href="#">Bizning skrining dasturimiz</a></li>
+								<li><a href="#">TSS</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Footer - News -->
+					<div class="col-lg-4 footer_col">
+						<div class="footer_news footer_column">
+							<div class="footer_title">Foydali havolalar</div>
+							<ul>
+								<li>
+									<div class="footer_news_title"><a href="{% url 'about' %}">Shifo topgan bemorlar</a></div>
+									<div class="footer_news_date">Yangiliklar 10-aprel</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="{% url 'about' %}">Mijozlar izohlari</a></div>
+									<div class="footer_news_date">Yangiliklar 21-sentabr</div>
+								</li>
+								<li>
+									<div class="footer_news_title"><a href="{% url 'about' %}">Markazimiz haqidagi yangiliklar</a></div>
+									<div class="footer_news_date">Yangiliklar 10-dekabr</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="copyright_content d-flex flex-lg-row flex-column align-items-lg-center justify-content-start">
+						<div class="cr"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+&copy;<script>document.write(new Date().getFullYear());</script><i class="fa fa-heart-o" aria-hidden="true"></i><a href="https://colorlib.com" target="_blank"></a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+						<div class="footer_social ml-lg-auto">
+								<ul>
+									<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>
+	</footer>
+</div>
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<!-- <script src="{% static 'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA' %}"></script> -->
+<script src="{% static 'js/contact.js' %}"></script>
+</body>
+</html>
