@@ -1,0 +1,62 @@
+{% for q in queryset %}
+<tr>
+    <th scope="row">{{ forloop.counter }}</th>
+    <td>{{ q.name }}</td>
+    <td>
+        <!-- Yangilash Tugmasi -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateModal{{ q.id }}">
+            Yangilash
+        </button>
+
+        <!-- O'chirish Tugmasi -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal{{ q.id }}">
+            O'chirish
+        </button>
+    </td>
+</tr>
+
+<!-- Yangilash Modal -->
+<div class="modal fade" id="updateModal{{ q.id }}" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel{{ q.id }}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel{{ q.id }}">Categoryni Yangilash</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Yangilash Formasi -->
+                <form>
+                    <div class="form-group">
+                        <label for="name{{ q.id }}">Nom</label>
+                        <input type="text" class="form-control" id="name{{ q.id }}" value="{{ q.name }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Saqlash</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- O'chirish Modal -->
+<div class="modal fade" id="deleteModal{{ q.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel{{ q.id }}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel{{ q.id }}">Categoryni O'chirish</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Rostdan ham bu categoryni o'chirmoqchimisiz?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Bekor Qilish</button>
+                <button type="button" class="btn btn-danger">O'chirish</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

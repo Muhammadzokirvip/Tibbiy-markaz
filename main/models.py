@@ -1,68 +1,46 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-class Home(models.Model):
-    """Asosiy sahifadagi malumot uchun yozilgan"""
-    title = models.CharField(max_length=255)
-    body = models.TextField()
+class User(AbstractUser):
+    avatar = models.ImageField(upload_to='avatar/', blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=255, blank=True, null=True)
+    zip_code = models.IntegerField(blank=True, null=True)
+    
+    class Meta(AbstractUser.Meta):
+        swappable = "AUTH_USER_MODEL"
+    
 
-    def __str__(self):
-        return self.title
+class Category(models.Model):
+    name = models.CharField(max_length=255, unique=True)
 
 
-class Table(models.Model):
-    """Asosiy sahifa va blog sahifada ko;rinadi vaqtlar ish kunlari ayrim malumotlar kiritish uchun"""
+class Product(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     body = models.TextField()
-    icon = models.FileField(upload_to='about/')
-    
-    def __str__(self):
-        return self.name
-
-    
-class Comment(models.Model):
-    """Mijozlar qoldirgan komentaryalarni ko'rish uchun blog sahifada ko;rinadi"""
-    title = models.CharField(max_length=255)
-    body = models.TextField()
-    icon = models.FileField(upload_to='about/')
-
-    def __str__(self):
-        return self.body
+    price = models.DecimalField(decimal_places=2, max_digits=10) # +
+    discount_price = models.DecimalField(decimal_places=2, max_digits=10, 
+                                         blank=True, null=True) #+
+    banner_img = models.ImageField(upload_to='banner-img')
+    quantity = models.IntegerField() 
+    delivery = models.BooleanField(default=False) #+
 
 
-class MedicalThem(models.Model):
-    """Doktorlar malumotlari uchun blog sahifada ko'rinadi"""
-    title = models.CharField(max_length=255)
-    body = models.TextField()
-    icon = models.ImageField(upload_to='about/')
-
-    def __str__(self):
-        return self.icon        
+class ProductImg(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='img')
 
 
-class Services(models.Model):
-    """Qanday hizmat ko'rsatilishi uchun malumotlar ushbu Hizmatlar sahifasi uchun"""
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    icon = models.ImageField(upload_to='services/')
-    
-    def __str__(self):
-        return self.title 
-    
-    
-class ServiceInformation(models.Model):
-    """Hizmat ko'rsatishdagi kerakli malumotlar uchun Hizmatlar sahifasida ko'rinadi"""
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    icon = models.ImageField(upload_to='services/')
-    
-    def __str__(self):
-        return self.description
-    
-    
-class Contact(models.Model):
-    """Mijozlar biz bilan bog'lanishi uchun Habar qoldirish sahifasida ko'rinadi"""
-    name = models.CharField(max_length=255)
-    email = models.EmailField(blank=True, null=True)
-    phone = models.CharField(max_length=255)
-    body = models.TextField()             
+class ProductVideo(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    video = models.FileField(upload_to='video')
+    link = models.URLField(null=True, blank=True)
+
+
+class Review(models.Model):
+    mark = models.IntegerField()
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
